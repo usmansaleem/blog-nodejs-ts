@@ -1,3 +1,4 @@
+
 const usingMockDb = (process.env.USE_MOCK_DB || '').toLowerCase();
 let userDaoPath = './User/UserDao';
 
@@ -7,3 +8,5 @@ if (usingMockDb === 'true') {
 
 // tslint:disable:no-var-requires
 export const { UserDao } = require(userDaoPath);
+
+export { BlogItemDao } from './BlogItem/BlogItemDao';
