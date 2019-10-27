@@ -81,7 +81,7 @@ export class BlogItemDao {
   }
 
   public getBlogMeta(): BlogMeta {
-    throw new BlogMeta(this.pagedBlogItemMap.size, this.blogItems.length);
+    return new BlogMeta(this.pagedBlogItemMap.size, this.blogItems.length);
   }
 
   public getAll(): IBlogItem[] {

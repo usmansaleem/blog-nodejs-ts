@@ -32,7 +32,7 @@ router.get("/all", async (req: Request, res: Response) => {
 router.get("/blogMeta", async (req: Request, res: Response) => {
   try {
     const blogMeta = blogItemDao.getBlogMeta();
-    return res.status(OK).json({ blogMeta });
+    return res.status(OK).json( blogMeta );
   } catch (err) {
     logger.error(err.message, err);
     return res.status(BAD_REQUEST).json({
