@@ -4,9 +4,9 @@
   "scripts": {
     "build": "node ./util/build.js",
     "lint": "tslint --project \"tsconfig.json\"",
+    "test": "cross-env ENV_FILE=test ts-node -r ./env -r tsconfig-paths/register ./spec/start.ts",
     "start": "cross-env ENV_FILE=production node -r ./env -r module-alias/register ./dist/start.js",
-    "start-dev": "nodemon --config \"./util/nodemon.json\"",
-    "test": "nodemon --config \"./util/nodemon.test.json\""
+    "start-dev": "nodemon --config \"./util/nodemon.json\""
   },
   "repository": {
     "type": "git",

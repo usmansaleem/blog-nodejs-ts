@@ -13,14 +13,14 @@ describe("Blog Routes", () => {
 
   let agent: SuperTest<Test>;
 
-  beforeAll(done => {
+  beforeAll((done) => {
     agent = supertest.agent(app);
     done();
   });
 
   describe(`"GET:${getAllBlogItemsPath}"`, () => {
     it(`should return a JSON object with all the blogItems and a status code of "${OK}" if the
-        request was successful.`, done => {
+        request was successful.`, (done) => {
       agent.get(getAllBlogItemsPath).end((err: Error, res: Response) => {
         pErr(err);
         expect(res.status).toBe(OK);
