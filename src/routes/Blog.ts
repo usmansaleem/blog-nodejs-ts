@@ -1,9 +1,9 @@
-import { logger } from "@shared";
-import { Request, Response, Router, Express } from "express";
-import { BAD_REQUEST, CREATED, OK } from "http-status-codes";
-import { paramMissingError } from "@shared";
-import { ParamsDictionary } from "express-serve-static-core";
-import { BlogItemDao } from "@daos";
+import { logger } from '@shared';
+import { Request, Response, Router, Express } from 'express';
+import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
+import { paramMissingError } from '@shared';
+import { ParamsDictionary } from 'express-serve-static-core';
+import { BlogItemDao } from '@daos';
 
 // Init shared
 const router = Router();
@@ -13,7 +13,7 @@ const blogItemDao = new BlogItemDao();
  *                      Get All Users - "GET /rest/blog/all"
  ******************************************************************************/
 
-router.get("/all", async (req: Request, res: Response) => {
+router.get('/all', async (req: Request, res: Response) => {
   try {
     const blogItem = blogItemDao.getAll();
     return res.status(OK).json({ blogItem });
@@ -23,6 +23,23 @@ router.get("/all", async (req: Request, res: Response) => {
       error: err.message
     });
   }
+});
+
+/******************************************************************************
+ *         Get BlogItems Per Page - "GET /rest/blog/blogItems/:pageId"
+ ******************************************************************************/
+
+router.get('/blogItems/:pageId', async (req: Request, res: Response) => {
+    try {
+        const { pageId } = req.params as ParamsDictionary;
+        const blogItem = await blogItemDao.getByPageId(Number(pageId));
+        return res.status(OK).json( {blogItem});
+    } catch (err) {
+        logger.error(err.message, err);
+        return res.status(BAD_REQUEST).json({
+            error: err.message,
+        });
+    }
 });
 
 /******************************************************************************

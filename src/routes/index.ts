@@ -5,8 +5,8 @@ import BlogRouter from './Blog';
 const router = Router();
 
 // Add sub-routes
-router.use("/blog", BlogRouter);
-router.use('/users', UserRouter); //TODO: Remove
+router.use('/blog', BlogRouter);
+router.use('/users', UserRouter); // TODO: Remove
 
 // Export the base-router
 export default router;
