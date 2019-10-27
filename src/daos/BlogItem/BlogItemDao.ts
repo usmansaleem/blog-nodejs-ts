@@ -25,8 +25,8 @@ export class BlogItemDao {
       throw err;
     }
     this.blogItemMap = new Map<number, IBlogItem>(
-      this.blogItems.map(b => {
-        return [b.id, b] as [number, IBlogItem];
+      this.blogItems.map((blogItem) => {
+        return [blogItem.id, blogItem] as [number, IBlogItem];
       })
     );
     this.pagedBlogItemMap = this.buildPagedBlogItemMap(this.blogItems);
@@ -80,7 +80,7 @@ export class BlogItemDao {
     return pagedBlogItemMap;
   }
 
-  public getBlogMeta():BlogMeta {
+  public getBlogMeta(): BlogMeta {
     throw new BlogMeta(this.pagedBlogItemMap.size, this.blogItems.length);
   }
 

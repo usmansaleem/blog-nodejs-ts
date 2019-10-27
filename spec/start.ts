@@ -25,7 +25,7 @@ jasmine.onComplete((passed: boolean) => {
 // Run all or a single unit-test
 if (process.argv[2]) {
   const testFile = process.argv[2];
-  find.file(testFile + ".spec.ts", "./spec", files => {
+  find.file(testFile + ".spec.ts", "./spec", (files) => {
     if (files.length === 1) {
       jasmine.specFiles = [files[0]];
       jasmine.execute();

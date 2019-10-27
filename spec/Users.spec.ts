@@ -16,14 +16,14 @@ describe("Users Routes", () => {
 
   let agent: SuperTest<Test>;
 
-  beforeAll(done => {
+  beforeAll((done) => {
     agent = supertest.agent(app);
     done();
   });
 
   describe(`"GET:${getUsersPath}"`, () => {
     it(`should return a JSON object with all the users and a status code of "${OK}" if the
-            request was successful.`, done => {
+            request was successful.`, (done) => {
       const users = [
         new User("Sean Maxwell", "sean.maxwell@gmail.com"),
         new User("John Smith", "john.smith@gmail.com"),
@@ -48,7 +48,7 @@ describe("Users Routes", () => {
     });
 
     it(`should return a JSON object containing an error message and a status code of
-            "${BAD_REQUEST}" if the request was unsuccessful.`, done => {
+            "${BAD_REQUEST}" if the request was unsuccessful.`, (done) => {
       const errMsg = "Could not fetch users.";
       spyOn(UserDao.prototype, "getAll").and.throwError(errMsg);
 
@@ -73,7 +73,7 @@ describe("Users Routes", () => {
       user: new User("Gordan Freeman", "gordan.freeman@gmail.com")
     };
 
-    it(`should return a status code of "${CREATED}" if the request was successful.`, done => {
+    it(`should return a status code of "${CREATED}" if the request was successful.`, (done) => {
       spyOn(UserDao.prototype, "add").and.returnValue(Promise.resolve());
 
       agent
@@ -89,7 +89,7 @@ describe("Users Routes", () => {
     });
 
     it(`should return a JSON object with an error message of "${paramMissingError}" and a status
-            code of "${BAD_REQUEST}" if the user param was missing.`, done => {
+            code of "${BAD_REQUEST}" if the user param was missing.`, (done) => {
       callApi({}).end((err: Error, res: Response) => {
         pErr(err);
         expect(res.status).toBe(BAD_REQUEST);
@@ -99,7 +99,7 @@ describe("Users Routes", () => {
     });
 
     it(`should return a JSON object with an error message and a status code of "${BAD_REQUEST}"
-            if the request was unsuccessful.`, done => {
+            if the request was unsuccessful.`, (done) => {
       const errMsg = "Could not add user.";
       spyOn(UserDao.prototype, "add").and.throwError(errMsg);
 
@@ -124,7 +124,7 @@ describe("Users Routes", () => {
       user: new User("Gordan Freeman", "gordan.freeman@gmail.com")
     };
 
-    it(`should return a status code of "${OK}" if the request was successful.`, done => {
+    it(`should return a status code of "${OK}" if the request was successful.`, (done) => {
       spyOn(UserDao.prototype, "update").and.returnValue(Promise.resolve());
 
       callApi(userData).end((err: Error, res: Response) => {
@@ -136,7 +136,7 @@ describe("Users Routes", () => {
     });
 
     it(`should return a JSON object with an error message of "${paramMissingError}" and a
-            status code of "${BAD_REQUEST}" if the user param was missing.`, done => {
+            status code of "${BAD_REQUEST}" if the user param was missing.`, (done) => {
       callApi({}).end((err: Error, res: Response) => {
         pErr(err);
         expect(res.status).toBe(BAD_REQUEST);
@@ -146,7 +146,7 @@ describe("Users Routes", () => {
     });
 
     it(`should return a JSON object with an error message and a status code of "${BAD_REQUEST}"
-            if the request was unsuccessful.`, done => {
+            if the request was unsuccessful.`, (done) => {
       const updateErrMsg = "Could not update user.";
       spyOn(UserDao.prototype, "update").and.throwError(updateErrMsg);
 
@@ -164,7 +164,7 @@ describe("Users Routes", () => {
       return agent.delete(deleteUserPath.replace(":id", id.toString()));
     };
 
-    it(`should return a status code of "${OK}" if the request was successful.`, done => {
+    it(`should return a status code of "${OK}" if the request was successful.`, (done) => {
       spyOn(UserDao.prototype, "delete").and.returnValue(Promise.resolve());
 
       callApi(5).end((err: Error, res: Response) => {
@@ -176,7 +176,7 @@ describe("Users Routes", () => {
     });
 
     it(`should return a JSON object with an error message and a status code of "${BAD_REQUEST}"
-            if the request was unsuccessful.`, done => {
+            if the request was unsuccessful.`, (done) => {
       const deleteErrMsg = "Could not delete user.";
       spyOn(UserDao.prototype, "delete").and.throwError(deleteErrMsg);
 
