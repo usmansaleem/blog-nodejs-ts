@@ -1,7 +1,7 @@
-import { IBlogItem } from '@entities';
-import jsonfile from 'jsonfile';
-import path from 'path';
-import { logger } from '@shared';
+import { IBlogItem, BlogMeta } from "@entities";
+import jsonfile from "jsonfile";
+import path from "path";
+import { logger } from "@shared";
 
 export class BlogItemDao {
   private readonly BLOG_ITEMS_PER_PAGE: number = 10;
@@ -11,26 +11,26 @@ export class BlogItemDao {
 
   private readonly dataPath = path.join(
     __dirname,
-    '..',
-    '..',
-    'data',
-    'data.json'
+    "..",
+    "..",
+    "data",
+    "data.json"
   );
 
   constructor() {
     try {
       this.blogItems = this.loadBlogJson();
-      logger.info('Blog Items read: ' + this.blogItems.length);
+      logger.info("Blog Items read: " + this.blogItems.length);
     } catch (err) {
       throw err;
     }
     this.blogItemMap = new Map<number, IBlogItem>(
-      this.blogItems.map((b) => {
-          return [b.id, b] as [number, IBlogItem];
+      this.blogItems.map(b => {
+        return [b.id, b] as [number, IBlogItem];
       })
     );
     this.pagedBlogItemMap = this.buildPagedBlogItemMap(this.blogItems);
-    logger.info('Blog pages created: ' + this.pagedBlogItemMap.size);
+    logger.info("Blog pages created: " + this.pagedBlogItemMap.size);
   }
 
   private loadBlogJson(): IBlogItem[] {
@@ -80,6 +80,10 @@ export class BlogItemDao {
     return pagedBlogItemMap;
   }
 
+  public getBlogMeta():BlogMeta {
+    throw new BlogMeta(this.pagedBlogItemMap.size, this.blogItems.length);
+  }
+
   public getAll(): IBlogItem[] {
     return this.blogItems;
   }
@@ -90,7 +94,7 @@ export class BlogItemDao {
       if (blogItem) {
         return resolve(blogItem);
       } else {
-        return reject(new Error('Blog Item not found'));
+        return reject(new Error("Blog Item not found"));
       }
     });
   }
@@ -101,7 +105,7 @@ export class BlogItemDao {
       if (blogItems) {
         return resolve(blogItems);
       } else {
-        return reject(new Error('Page not found'));
+        return reject(new Error("Page not found"));
       }
     });
   }

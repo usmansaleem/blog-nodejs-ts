@@ -1,4 +1,4 @@
-import { Category, ICategory } from './Category';
+import { Category, ICategory } from "./Category";
 
 export interface IBlogItem {
   id?: number;
