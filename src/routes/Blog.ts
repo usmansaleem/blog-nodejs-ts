@@ -16,7 +16,7 @@ const blogItemDao = new BlogItemDao();
 router.get("/all", async (req: Request, res: Response) => {
   try {
     const blogItem = blogItemDao.getAll();
-    return res.status(OK).json({ blogItem });
+    return res.status(OK).json(blogItem);
   } catch (err) {
     logger.error(err.message, err);
     return res.status(BAD_REQUEST).json({
@@ -32,7 +32,7 @@ router.get("/all", async (req: Request, res: Response) => {
 router.get("/blogMeta", async (req: Request, res: Response) => {
   try {
     const blogMeta = blogItemDao.getBlogMeta();
-    return res.status(OK).json( blogMeta );
+    return res.status(OK).json(blogMeta);
   } catch (err) {
     logger.error(err.message, err);
     return res.status(BAD_REQUEST).json({
@@ -49,7 +49,7 @@ router.get("/blogItems/:pageId", async (req: Request, res: Response) => {
   try {
     const { pageId } = req.params as ParamsDictionary;
     const blogItem = await blogItemDao.getByPageId(Number(pageId));
-    return res.status(OK).json({ blogItem });
+    return res.status(OK).json(blogItem);
   } catch (err) {
     logger.error(err.message, err);
     return res.status(BAD_REQUEST).json({
@@ -66,7 +66,7 @@ router.get("/blogItems/blogItem/:id", async (req: Request, res: Response) => {
   try {
     const { id } = req.params as ParamsDictionary;
     const blogItem = await blogItemDao.getById(Number(id));
-    return res.status(OK).json({ blogItem });
+    return res.status(OK).json(blogItem);
   } catch (err) {
     logger.error(err.message, err);
     return res.status(BAD_REQUEST).json({
