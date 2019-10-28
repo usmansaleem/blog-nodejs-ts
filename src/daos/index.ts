@@ -1,1 +1,3 @@
-export { BlogItemDao } from "./BlogItem/BlogItemDao";
+import { BlogItemDao } from "./BlogItem/BlogItemDao";
+
+export const blogItemDao = new BlogItemDao();

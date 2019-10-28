@@ -3,11 +3,10 @@ import { Request, Response, Router, Express } from "express";
 import { BAD_REQUEST, CREATED, OK } from "http-status-codes";
 import { paramMissingError } from "@shared";
 import { ParamsDictionary } from "express-serve-static-core";
-import { BlogItemDao } from "@daos";
+import { blogItemDao } from "@daos";
 
 // Init shared
 const router = Router();
-const blogItemDao = new BlogItemDao();
 
 /******************************************************************************
  *                      Get All Blog Items - "GET /rest/blog/all"

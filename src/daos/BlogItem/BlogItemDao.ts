@@ -8,6 +8,7 @@ export class BlogItemDao {
   private blogItems: IBlogItem[];
   private blogItemMap: Map<number, IBlogItem>;
   private pagedBlogItemMap: Map<number, IBlogItem[]>;
+  private blogItemByUrlMap: Map<string, IBlogItem>;
 
   private readonly dataPath = path.join(
     __dirname,
@@ -24,11 +25,21 @@ export class BlogItemDao {
     } catch (err) {
       throw err;
     }
+    // map by id
     this.blogItemMap = new Map<number, IBlogItem>(
       this.blogItems.map((blogItem) => {
         return [blogItem.id, blogItem] as [number, IBlogItem];
       })
     );
+
+    // map by friendly_url
+    this.blogItemByUrlMap = new Map<string, IBlogItem>(
+      this.blogItems.map((blogItem) => {
+        return [blogItem.urlFriendlyId, blogItem] as [string, IBlogItem];
+      })
+    );
+
+    // map by page
     this.pagedBlogItemMap = this.buildPagedBlogItemMap(this.blogItems);
     logger.info("Blog pages created: " + this.pagedBlogItemMap.size);
   }
@@ -85,7 +96,7 @@ export class BlogItemDao {
   }
 
   public getAll(): IBlogItem[] {
-    return this.blogItems;
+    return [...this.blogItems];
   }
 
   public async getById(id: number): Promise<IBlogItem> {
@@ -94,7 +105,7 @@ export class BlogItemDao {
       if (blogItem) {
         return resolve(blogItem);
       } else {
-        return reject(new Error("Blog Item not found"));
+        return reject(new Error("Blog not found"));
       }
     });
   }
@@ -106,6 +117,17 @@ export class BlogItemDao {
         return resolve(blogItems);
       } else {
         return reject(new Error("Page not found"));
+      }
+    });
+  }
+
+  public async getByUrlFriendlyId(urlFriendlyId: string): Promise<IBlogItem> {
+    return new Promise<IBlogItem>((resolve, reject) => {
+      const blogItem = this.blogItemByUrlMap.get(urlFriendlyId);
+      if (blogItem) {
+        return resolve(blogItem);
+      } else {
+        return reject(new Error("Blog not found"));
       }
     });
   }

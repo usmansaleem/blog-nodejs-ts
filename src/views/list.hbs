@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog List</title>
+</head>
+
+<body>
+    <h1>List of Blog Entries</h1>
+    {{#each blogItems}}
+    <p><a href="blog/{{{this.urlFriendlyId}}}">{{this.title}}</a></p>
+    {{/each}}
+</body>
+
+</html>
