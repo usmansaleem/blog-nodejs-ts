@@ -64,4 +64,4 @@ typings/
 logs
 dist
 node_modules
-env/production.env
+env/*.env
