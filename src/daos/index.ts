@@ -1,3 +1,7 @@
 import { BlogItemDao } from "./BlogItem/BlogItemDao";
 
-export const blogItemDao = new BlogItemDao();
+// initialize and export singelton dao
+const blogItemDao = new BlogItemDao();
+blogItemDao.initBlogItems();
+
+export { blogItemDao };

@@ -5,10 +5,10 @@ import { logger } from "@shared";
 
 export class BlogItemDao {
   private readonly BLOG_ITEMS_PER_PAGE: number = 10;
-  private blogItems: IBlogItem[];
-  private blogItemMap: Map<number, IBlogItem>;
-  private pagedBlogItemMap: Map<number, IBlogItem[]>;
-  private blogItemByUrlMap: Map<string, IBlogItem>;
+  private blogItems: IBlogItem[] = [];
+  private blogItemMap: Map<number, IBlogItem> = new Map();
+  private pagedBlogItemMap: Map<number, IBlogItem[]> = new Map();
+  private blogItemByUrlMap: Map<string, IBlogItem> = new Map();
 
   private readonly dataPath = path.join(
     __dirname,
@@ -18,13 +18,14 @@ export class BlogItemDao {
     "data.json"
   );
 
-  constructor() {
+  public initBlogItems(): void {
     try {
       this.blogItems = this.loadBlogJson();
       logger.info("Blog Items read: " + this.blogItems.length);
     } catch (err) {
       throw err;
     }
+
     // map by id
     this.blogItemMap = new Map<number, IBlogItem>(
       this.blogItems.map((blogItem) => {
