@@ -4,12 +4,13 @@ import supertest from "supertest";
 import { BAD_REQUEST, CREATED, OK } from "http-status-codes";
 import { Response, SuperTest, Test } from "supertest";
 import { IBlogItem, BlogItem } from "@entities";
-import { pErr, paramMissingError } from "@shared";
+import { pErr, paramMissingError, logger } from "@shared";
 
 describe("Blog Routes", () => {
   const blogPath = "/rest/blog";
   const getAllBlogItemsPath = `${blogPath}/all`;
   const getByPageId = `${blogPath}/blogItems/:pageId`;
+  const getById = `${blogPath}/blogItems/blogItem/:id`;
 
   let agent: SuperTest<Test>;
 
@@ -52,6 +53,33 @@ describe("Blog Routes", () => {
       callApi(0).end((err: Error, res: Response) => {
         expect(res.status).toBe(BAD_REQUEST);
         expect(res.body.error).toBe("Page not found");
+        done();
+      });
+    });
+  });
+
+  describe(`"GET: ${getById}"`, () => {
+    const callApi = (id: string) => {
+      return agent.get(getById.replace(":id", id));
+    };
+
+    it("should return valid blogItem", (done) => {
+      callApi("1").end((err: Error, res: Response) => {
+        pErr(err);
+        expect(res.status).toBe(OK);
+        expect(res.body.error).toBeUndefined();
+        logger.info("**** " + JSON.stringify(res.body));
+        const blogItems: IBlogItem = res.body;
+        expect(blogItems.id).toBe("1");
+        logger.info("created on Day: " + blogItems.createdOn);
+        done();
+      });
+    });
+
+    it(`"should return ${BAD_REQUEST} if blogItem doesn't exist"`, (done) => {
+      callApi("0").end((err: Error, res: Response) => {
+        expect(res.status).toBe(BAD_REQUEST);
+        expect(res.body.error).toBe("Blog not found");
         done();
       });
     });
