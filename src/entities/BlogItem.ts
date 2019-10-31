@@ -1,7 +1,7 @@
 import { Category, ICategory } from "./Category";
 
 export interface IBlogItem {
-  id?: number;
+  id?: string;
   urlFriendlyId: string;
   title: string;
   description: string;
@@ -16,7 +16,7 @@ export interface IBlogItem {
 }
 
 export class BlogItem implements IBlogItem {
-  public id?: number | undefined;
+  public id?: string | undefined;
   public urlFriendlyId: string;
   public title: string;
   public description: string;
@@ -30,7 +30,7 @@ export class BlogItem implements IBlogItem {
   public categories: ICategory[];
 
   constructor(
-    id: number,
+    id: string,
     urlFriendlyId: string,
     title: string,
     description: string,

@@ -50,7 +50,6 @@ describe("Blog Routes", () => {
 
     it(`"should return ${BAD_REQUEST} if page doesn't exist"`, (done) => {
       callApi(0).end((err: Error, res: Response) => {
-        pErr(err);
         expect(res.status).toBe(BAD_REQUEST);
         expect(res.body.error).toBe("Page not found");
         done();

@@ -6,7 +6,7 @@ import { logger } from "@shared";
 export class BlogItemDao {
   private readonly BLOG_ITEMS_PER_PAGE: number = 10;
   private blogItems: IBlogItem[] = [];
-  private blogItemMap: Map<number, IBlogItem> = new Map();
+  private blogItemMap: Map<string, IBlogItem> = new Map();
   private pagedBlogItemMap: Map<number, IBlogItem[]> = new Map();
   private blogItemByUrlMap: Map<string, IBlogItem> = new Map();
 
@@ -27,9 +27,9 @@ export class BlogItemDao {
     }
 
     // map by id
-    this.blogItemMap = new Map<number, IBlogItem>(
+    this.blogItemMap = new Map(
       this.blogItems.map((blogItem) => {
-        return [blogItem.id, blogItem] as [number, IBlogItem];
+        return [blogItem.id, blogItem] as [string, IBlogItem];
       })
     );
 
@@ -69,12 +69,9 @@ export class BlogItemDao {
       }
     }
 
-    // reverse sort copy of blogItems array based on blogItem.id
+    // reverse sort copy of blogItems array based on blogItem.createdate
     const sortedBlogItems = [...blogItems].sort((left, right): number => {
-      if (left.id && right.id) {
-        return right.id - left.id;
-      }
-      return 0;
+      return right.createdOn.localeCompare(left.createdOn);
     });
     const pagedBlogItemMap = new Map<number, IBlogItem[]>();
     let pageNumber: number;
@@ -100,7 +97,7 @@ export class BlogItemDao {
     return [...this.blogItems];
   }
 
-  public async getById(id: number): Promise<IBlogItem> {
+  public async getById(id: string): Promise<IBlogItem> {
     return new Promise<IBlogItem>((resolve, reject) => {
       const blogItem = this.blogItemMap.get(id);
       if (blogItem) {

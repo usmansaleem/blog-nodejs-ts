@@ -64,7 +64,7 @@ router.get("/blogItems/:pageId", async (req: Request, res: Response) => {
 router.get("/blogItems/blogItem/:id", async (req: Request, res: Response) => {
   try {
     const { id } = req.params as ParamsDictionary;
-    const blogItem = await blogItemDao.getById(Number(id));
+    const blogItem = await blogItemDao.getById(id);
     return res.status(OK).json(blogItem);
   } catch (err) {
     logger.error(err.message, err);
