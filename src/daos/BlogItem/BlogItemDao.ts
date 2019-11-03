@@ -2,6 +2,7 @@ import { IBlogItem, BlogMeta } from "@entities";
 import jsonfile from "jsonfile";
 import path from "path";
 import { logger } from "@shared";
+import dataFile from "@datapath";
 
 export class BlogItemDao {
   private readonly BLOG_ITEMS_PER_PAGE: number = 10;
@@ -9,14 +10,6 @@ export class BlogItemDao {
   private blogItemMap: Map<string, IBlogItem> = new Map();
   private pagedBlogItemMap: Map<number, IBlogItem[]> = new Map();
   private blogItemByUrlMap: Map<string, IBlogItem> = new Map();
-
-  private readonly dataPath = path.join(
-    __dirname,
-    "..",
-    "..",
-    "data",
-    "data.json"
-  );
 
   public initBlogItems(): void {
     try {
@@ -46,7 +39,7 @@ export class BlogItemDao {
   }
 
   private loadBlogJson(): IBlogItem[] {
-    return jsonfile.readFileSync(this.dataPath);
+    return jsonfile.readFileSync(dataFile);
   }
 
   // page 1 contains oldest blogItems, highest page contains latest items

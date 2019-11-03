@@ -24,6 +24,9 @@
       ],
       "@server": [
         "src/Server"
+      ],
+      "@datapath": [
+        "src/DataPath"
       ]
     },
     "types": [
