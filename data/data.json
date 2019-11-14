@@ -10,15 +10,12 @@
     "modifiedOn": "2017-12-14",
     "categories": [
       {
-        "id": 0,
         "name": "Vertx"
       },
       {
-        "id": 1,
         "name": "Kotlin"
       },
       {
-        "id": 2,
         "name": "Gradle"
       }
     ]
@@ -34,11 +31,9 @@
     "modifiedOn": "2017-11-26",
     "categories": [
       {
-        "id": 0,
         "name": "Web"
       },
       {
-        "id": 1,
         "name": "JavaScript"
       }
     ]
@@ -54,19 +49,15 @@
     "modifiedOn": "2017-11-24",
     "categories": [
       {
-        "id": 0,
         "name": "Kotlin"
       },
       {
-        "id": 1,
         "name": "JGit"
       },
       {
-        "id": 2,
         "name": "gist"
       },
       {
-        "id": 3,
         "name": "Git"
       }
     ]
@@ -82,15 +73,12 @@
     "modifiedOn": "2017-11-23",
     "categories": [
       {
-        "id": 0,
         "name": "Java"
       },
       {
-        "id": 1,
         "name": "GitHub"
       },
       {
-        "id": 2,
         "name": "AngularJS"
       }
     ]
@@ -106,11 +94,9 @@
     "modifiedOn": "2017-11-23",
     "categories": [
       {
-        "id": 0,
         "name": "Git"
       },
       {
-        "id": 1,
         "name": "Github"
       }
     ]
@@ -126,11 +112,9 @@
     "modifiedOn": "2017-10-20",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -146,11 +130,9 @@
     "modifiedOn": "2017-05-31",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -166,7 +148,6 @@
     "modifiedOn": "2017-03-24",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -182,7 +163,6 @@
     "modifiedOn": "2017-03-24",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -209,11 +189,9 @@
     "modifiedOn": "2015-12-15",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -229,11 +207,9 @@
     "modifiedOn": "2015-12-09",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -249,7 +225,6 @@
     "modifiedOn": "2015-06-25",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -265,11 +240,9 @@
     "modifiedOn": "2015-06-15",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -285,15 +258,12 @@
     "modifiedOn": "2015-06-15",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -309,19 +279,15 @@
     "modifiedOn": "2015-06-02",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 2,
         "name": "PostgreSQL"
       },
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -337,7 +303,6 @@
     "modifiedOn": "2015-05-18",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -353,15 +318,12 @@
     "modifiedOn": "2015-12-15",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -377,11 +339,9 @@
     "modifiedOn": "2014-01-06",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -397,11 +357,9 @@
     "modifiedOn": "2014-01-06",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -417,7 +375,6 @@
     "modifiedOn": "2013-06-24",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -433,7 +390,6 @@
     "modifiedOn": "2013-06-12",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -449,7 +405,6 @@
     "modifiedOn": "2012-12-30",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -465,7 +420,6 @@
     "modifiedOn": "2012-12-05",
     "categories": [
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -481,11 +435,9 @@
     "modifiedOn": "2012-12-02",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -501,11 +453,9 @@
     "modifiedOn": "2012-11-21",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -521,11 +471,9 @@
     "modifiedOn": "2012-11-06",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -541,11 +489,9 @@
     "modifiedOn": "2012-09-12",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -561,15 +507,12 @@
     "modifiedOn": "2012-09-12",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -585,19 +528,15 @@
     "modifiedOn": "2012-09-06",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 2,
         "name": "PostgreSQL"
       },
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -613,11 +552,9 @@
     "modifiedOn": "2011-11-18",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 6,
         "name": "JBoss"
       }
     ]
@@ -633,7 +570,6 @@
     "modifiedOn": "2011-10-12",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -649,7 +585,6 @@
     "modifiedOn": "2011-06-28",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -665,11 +600,9 @@
     "modifiedOn": "2011-03-17",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -685,7 +618,6 @@
     "modifiedOn": "2011-02-28",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -701,7 +633,6 @@
     "modifiedOn": "2011-02-14",
     "categories": [
       {
-        "id": 2,
         "name": "PostgreSQL"
       }
     ]
@@ -717,7 +648,6 @@
     "modifiedOn": "2010-11-20",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -733,7 +663,6 @@
     "modifiedOn": "2010-11-20",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -749,7 +678,6 @@
     "modifiedOn": "2010-06-25",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -765,11 +693,9 @@
     "modifiedOn": "2010-05-07",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -785,7 +711,6 @@
     "modifiedOn": "2010-04-15",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -801,7 +726,6 @@
     "modifiedOn": "2010-03-30",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -817,11 +741,9 @@
     "modifiedOn": "2010-03-18",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -837,7 +759,6 @@
     "modifiedOn": "2009-12-25",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -853,11 +774,9 @@
     "modifiedOn": "2009-12-09",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -873,7 +792,6 @@
     "modifiedOn": "2009-12-09",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -889,11 +807,9 @@
     "modifiedOn": "2009-12-09",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -953,7 +869,6 @@
     "modifiedOn": "2009-12-02",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -969,7 +884,6 @@
     "modifiedOn": "2009-09-22",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -985,7 +899,6 @@
     "modifiedOn": "2008-07-12",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1001,7 +914,6 @@
     "modifiedOn": "2008-06-12",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1017,7 +929,6 @@
     "modifiedOn": "2008-05-02",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1033,7 +944,6 @@
     "modifiedOn": "2007-03-07",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1049,7 +959,6 @@
     "modifiedOn": "2007-03-06",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1065,7 +974,6 @@
     "modifiedOn": "2006-10-16",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1081,7 +989,6 @@
     "modifiedOn": "2006-08-28",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1097,19 +1004,15 @@
     "modifiedOn": "2006-08-23",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 2,
         "name": "PostgreSQL"
       },
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1125,11 +1028,9 @@
     "modifiedOn": "2006-08-23",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1145,15 +1046,12 @@
     "modifiedOn": "2006-03-10",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1169,7 +1067,6 @@
     "modifiedOn": "2006-03-02",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1185,7 +1082,6 @@
     "modifiedOn": "2006-02-15",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1201,11 +1097,9 @@
     "modifiedOn": "2006-01-31",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1221,7 +1115,6 @@
     "modifiedOn": "2006-01-26",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1237,7 +1130,6 @@
     "modifiedOn": "2006-01-05",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1253,7 +1145,6 @@
     "modifiedOn": "2005-12-28",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1269,7 +1160,6 @@
     "modifiedOn": "2005-12-28",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1285,7 +1175,6 @@
     "modifiedOn": "2005-12-08",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1301,7 +1190,6 @@
     "modifiedOn": "2005-11-30",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1317,11 +1205,9 @@
     "modifiedOn": "2005-11-23",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1337,7 +1223,6 @@
     "modifiedOn": "2005-11-03",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1353,7 +1238,6 @@
     "modifiedOn": "2005-10-20",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1369,7 +1253,6 @@
     "modifiedOn": "2005-10-20",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1385,7 +1268,6 @@
     "modifiedOn": "2005-10-20",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1401,7 +1283,6 @@
     "modifiedOn": "2005-10-14",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1417,7 +1298,6 @@
     "modifiedOn": "2005-09-26",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1433,7 +1313,6 @@
     "modifiedOn": "2005-09-21",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1449,7 +1328,6 @@
     "modifiedOn": "2005-09-20",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1465,7 +1343,6 @@
     "modifiedOn": "2005-09-16",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1481,7 +1358,6 @@
     "modifiedOn": "2005-09-16",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1497,7 +1373,6 @@
     "modifiedOn": "2005-09-13",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1513,7 +1388,6 @@
     "modifiedOn": "2005-09-09",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1529,11 +1403,9 @@
     "modifiedOn": "2005-09-08",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1549,7 +1421,6 @@
     "modifiedOn": "2005-09-08",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1565,7 +1436,6 @@
     "modifiedOn": "2005-09-05",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1581,7 +1451,6 @@
     "modifiedOn": "2005-08-19",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1597,11 +1466,9 @@
     "modifiedOn": "2005-08-10",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1617,7 +1484,6 @@
     "modifiedOn": "2005-08-04",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1633,7 +1499,6 @@
     "modifiedOn": "2005-08-02",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1649,7 +1514,6 @@
     "modifiedOn": "2005-08-02",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1665,7 +1529,6 @@
     "modifiedOn": "2005-07-26",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1681,7 +1544,6 @@
     "modifiedOn": "2005-07-26",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1697,7 +1559,6 @@
     "modifiedOn": "2005-07-20",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1713,7 +1574,6 @@
     "modifiedOn": "2005-07-13",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1729,7 +1589,6 @@
     "modifiedOn": "2005-07-11",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1745,7 +1604,6 @@
     "modifiedOn": "2005-07-11",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1761,7 +1619,6 @@
     "modifiedOn": "2005-07-09",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1777,7 +1634,6 @@
     "modifiedOn": "2005-07-09",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1793,7 +1649,6 @@
     "modifiedOn": "2005-07-09",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1809,7 +1664,6 @@
     "modifiedOn": "2005-07-09",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1825,7 +1679,6 @@
     "modifiedOn": "2005-07-08",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       }
     ]
@@ -1841,11 +1694,9 @@
     "modifiedOn": "2005-07-08",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       },
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1861,7 +1712,6 @@
     "modifiedOn": "2005-06-27",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -1877,11 +1727,9 @@
     "modifiedOn": "2005-06-26",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1897,7 +1745,6 @@
     "modifiedOn": "2005-06-26",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1913,7 +1760,6 @@
     "modifiedOn": "2005-06-26",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1929,7 +1775,6 @@
     "modifiedOn": "2005-06-26",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -1945,7 +1790,6 @@
     "modifiedOn": "2005-06-26",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1972,7 +1816,6 @@
     "modifiedOn": "2005-06-23",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -1988,7 +1831,6 @@
     "modifiedOn": "2005-06-23",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -2004,11 +1846,9 @@
     "modifiedOn": "2005-06-23",
     "categories": [
       {
-        "id": 3,
         "name": "Linux"
       },
       {
-        "id": 5,
         "name": "General"
       }
     ]
@@ -2024,7 +1864,6 @@
     "modifiedOn": "2005-06-20",
     "categories": [
       {
-        "id": 4,
         "name": "IT"
       }
     ]
@@ -2040,7 +1879,6 @@
     "modifiedOn": "2005-06-18",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -2122,7 +1960,6 @@
     "modifiedOn": "2005-06-09",
     "categories": [
       {
-        "id": 1,
         "name": "Java"
       }
     ]
@@ -2149,7 +1986,6 @@
     "modifiedOn": "2005-06-09",
     "categories": [
       {
-        "id": 5,
         "name": "General"
       }
     ]

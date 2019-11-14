@@ -1,4 +1,4 @@
-import { Category, ICategory } from "./Category";
+import { Category } from "./Category";
 
 export class BlogItem {
   public id?: string | undefined;
@@ -10,7 +10,7 @@ export class BlogItem {
   public readonly createdOn: string;
   public modifiedOn: string;
 
-  public categories: ICategory[];
+  public categories: Category[];
 
   constructor(
     id: string | undefined,
@@ -21,7 +21,7 @@ export class BlogItem {
     blogSection: string,
     createdOn: string,
     modifiedOn: string,
-    categories: ICategory[]
+    categories: Category[]
   ) {
     this.id = id;
     this.urlFriendlyId = urlFriendlyId;
