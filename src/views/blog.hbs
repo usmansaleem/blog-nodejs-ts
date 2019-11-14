@@ -1,226 +1,117 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Blog by Usman Saleem - {{blogItem.title}}</title>
+    <meta name="description" content="Blogging about various softwware development related stuff by Usman Saleem">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{blogItem.title}}</title>
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-    <!-- inline our custom styles -->
-    <style>
-        /*
-           Bootstrap navbar fix http://getbootstrap.com/components/#navbar-fixed-top
-         */
+    <link rel="stylesheet" href="/css/calendar.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        /* fix fixed-bar */
-        body {
-            padding-top: 50px;
-        }
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom.css">
 
-        @media screen and (max-width: 768px) {
-            body {
-                padding-top: 50px;
-            }
-        }
-
-        /* fix fixed-bar jumping to in-page anchor issue */
-        *[id]:before {
-            display: block;
-            content: " ";
-            margin-top: -75px;
-            height: 75px;
-            visibility: hidden;
-        }
-
-        /**
-            Date CSS taken from http://www.wplover.com/1449/easier-date-display-technique-with-css-3/
-         */
-        .date {
-            position: relative;
-            width: 70px;
-            font-family: Georgia, serif;
-            color: #999;
-            margin: 0 auto;
-        }
-
-        .day,
-        .month,
-        .year {
-            position: absolute;
-        }
-
-        .day {
-            font-size: 30px;
-            top: 15px;
-        }
-
-        .month {
-            top: 0;
-            left: 0;
-            font-size: 18px;
-        }
-
-        .year {
-            top: 19px;
-            right: 0;
-            font-size: 19px;
-            rotation: -90deg !important;
-            /* ** Hacks ** */
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-        }
-
-        /* Other custom stuff */
-
-        .fb-left {
-            float: left;
-        }
-
-        .last-modified {
-            float: right;
-            font-style: italic;
-            font-size: x-small;
-        }
-    </style>
-
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-    <!-- Iconic Bootstrap Font css -->
-    <link href="/css/open-iconic-bootstrap.min.css" rel="stylesheet">
-
-    <!-- Open Graph tags -->
-    <meta property="og:url" content="https://usmans.info/view/blog/{{blogItem.urlFriendlyId}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{blogItem.title}}" />
-    <meta property="og:description" content="{{blogItem.description}}" />
-    <meta property="og:image" content="https://usmans.info/images/usman_saleem_blog_jumbo.png" />
-    <meta property="og:image:width" content="700" />
-    <meta property="og:image:height" content="315" />
-    <meta property="fb:app_id" content="142645833160332" />
-
+    <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-    <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=142645833160332';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+    <header class="page-header">
+        <nav class="blue-grey darken-4">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo blue-grey-text text-lighten-4">Usman Saleem</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="info.html" class="grey-text blue-grey-text text-lighten-4"><i
+                                class="material-icons right">info</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row valign-wrapper">
+                <div class="col s3 m3 l1">
+                    <time datetime="{{blogItem.createdOn}}" class="date-as-calendar inline-flex size1_25x">
+                        <span class="weekday">{{blogItemDate.weekday}}</span>
+                        <span class="day">{{blogItemDate.day}}</span>
+                        <span class="month">{{blogItemDate.month}}</span>
+                        <span class="year">{{blogItemDate.year}}</span>
+                    </time>
+                </div>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #daddad;">
-        <a class="navbar-brand" href="/#!/">
-            <img src="/images/usman_profile_32.jpg" class="d-inline-block align-top" alt="Usman" />
-            Usman's Blog
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/#!/"><span class="oi oi-home" title="home" aria-hidden="true"></span>
-                        Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/#!/about"><span class="oi oi-info" title="info"
-                            aria-hidden="true"></span> About</a>
-                </li>
-            </ul>
+                <div class="col s9 m9 l11">
+                    <h4>{{blogItem.title}}</h4>
+                </div>
 
-            <form id="cse-search-box-form-id" class="form-inline" onsubmit="return executeSearchQuery();">
-                <input id="cse-search-input-box-id" class="form-control mr-1" type="search"
-                    placeholder="Google Custom Search" aria-label="Search">
-                <script async type="text/javascript"
-                    src="//cse.google.com/cse/brand?form=cse-search-box-form-id&inputbox=cse-search-input-box-id">
-                    </script>
-                <button class="btn btn-light oi oi-magnifying-glass" type="submit"></button>
-            </form>
-        </div>
-    </nav>
+            </div>
+            <div class="row">
+                <!-- Categories loop -->
+                <div class="col s12">
+                    {{#each blogItem.categories}}
+                    <span class="new badge" data-badge-caption="">{{this.name}}</span>
+                    {{/each}}
+                </div>
 
-    <div class="container mt-5">
 
-        <div class="media">
-            <div class="mr-3">
-                <div class="date">
-                    <span class="day">{{blogItem.createDay}}</span>
-                    <span class="month">{{blogItem.createMonth}}</span>
-                    <span class="year">{{blogItem.createYear}}</span>
+                <!-- blog content -->
+                <div class="col s12">
+                    {{{blogItem.body}}}
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </main>
+
+    <footer class="page-footer blue-grey darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="blue-grey-text text-lighten-4">Who Am I?</h5>
+                    <p class="blue-grey-text text-lighten-3">I am an IT professional specialising in enterprise and full
+                        stack software
+                        development. This blog is about various stuff I learn, observe and try out.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="blue-grey-text text-lighten-4">Links</h5>
+                    <ul>
+                        <li><a class="blue-grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="blue-grey-text text-lighten-3" href="info.html">Information</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="media-body">
-                <h1 class="mt-0">{{blogItem.title}}</h1>
-
-                <!-- Categories loop -->
-                {{#each blogItem.categories}}
-                <span class="badge badge-secondary">{{this.name}}</span>
-                {{/each}}
-
-                <div>{{{blogItem.body}}}</div>
-                <div class="float-sm-right last-modified">Last Modified On: <span>{{blogItem.modifiedOn}}</span></div>
-            </div>
         </div>
-
-        <span class="fb-left">
-            <div class="fb-like" data-href="https://usmans.info/view/blog/{{blogItem.urlFriendlyId}}"
-                data-layout="button_count" data-action="recommend" data-size="small" data-show-faces="false"
-                data-share="true"></div>
-        </span>
-        <div class="fb-comments" data-href="https://usmans.info/view/blog/{{blogItem.urlFriendlyId}}" data-numposts="5"
-            data-colorscheme="light" width="100%"></div>
-
-    </div>
-    <div>
-        <script>
-            (function () {
-                var cx = '011399305871622754787:lyd4varaigm';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-            })();
-        </script>
-        <gcse:searchresults-only></gcse:searchresults-only>
-    </div>
-    <footer class="footer">
-        <div class="container-fluid small text-muted">(c) Usman Saleem. 2005-2019. Version 6.0</div>
+        <div class="footer-copyright blue-grey darken-2">
+            <div class="container blue-grey-text text-lighten-5">(c) Usman Saleem 2005-2019. v7.0</div>
+        </div>
     </footer>
 
-    <!-- Bootstrap 4 and JQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
-    <!-- Google Custom Search - Custom Java Script -->
+    <!-- JS -->
+    <script src="/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
-        function executeSearchQuery() {
-            var input = document.getElementById('cse-search-input-box-id');
-            var element = google.search.cse.element.getElement('searchresults-only0');
-            if (input.value == '') {
-                element.clearAllResults();
-            } else {
-                element.execute(input.value);
-            }
-            return false;
-        }
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-151510598-1', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
     </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>

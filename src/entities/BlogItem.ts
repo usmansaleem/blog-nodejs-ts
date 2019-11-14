@@ -1,21 +1,7 @@
 import { Category, ICategory } from "./Category";
+import moment from "moment";
 
-export interface IBlogItem {
-  id?: string;
-  urlFriendlyId: string;
-  title: string;
-  description: string;
-  body: string;
-  blogSection: string;
-  readonly createdOn: string;
-  readonly createDay: string;
-  readonly createMonth: string;
-  readonly createYear: string;
-  modifiedOn: string;
-  categories: ICategory[];
-}
-
-export class BlogItem implements IBlogItem {
+export class BlogItem {
   public id?: string | undefined;
   public urlFriendlyId: string;
   public title: string;
@@ -24,9 +10,7 @@ export class BlogItem implements IBlogItem {
   public blogSection: string;
   public readonly createdOn: string;
   public modifiedOn: string;
-  public readonly createDay: string;
-  public readonly createMonth: string;
-  public readonly createYear: string;
+
   public categories: ICategory[];
 
   constructor(
@@ -38,9 +22,9 @@ export class BlogItem implements IBlogItem {
     blogSection: string,
     createdOn: string,
     modifiedOn: string,
-    createDay: string,
-    createMonth: string,
-    createYear: string,
+    // createDay: string,
+    // createMonth: string,
+    // createYear: string,
     categories: ICategory[]
   ) {
     this.id = id;
@@ -51,9 +35,22 @@ export class BlogItem implements IBlogItem {
     this.blogSection = blogSection;
     this.createdOn = createdOn;
     this.modifiedOn = modifiedOn;
-    this.createDay = createDay;
-    this.createMonth = createMonth;
-    this.createYear = createYear;
+
     this.categories = categories;
+  }
+}
+
+export class BlogItemDate {
+  public readonly weekday: string;
+  public readonly day: string;
+  public readonly month: string;
+  public readonly year: string;
+
+  constructor(createdDate: string) {
+   var parsedDate = moment(createdDate);
+   this.weekday = parsedDate.format("dddd");
+   this.day = parsedDate.format("D");
+   this.month = parsedDate.format("MMMM");
+   this.year = parsedDate.format("Y") ;  
   }
 }

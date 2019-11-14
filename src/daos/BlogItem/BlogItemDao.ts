@@ -1,4 +1,4 @@
-import { IBlogItem, BlogMeta } from "@entities";
+import { BlogMeta, BlogItem } from "@entities";
 import jsonfile from "jsonfile";
 import path from "path";
 import { logger } from "@shared";
@@ -6,10 +6,10 @@ import dataFile from "@datapath";
 
 export class BlogItemDao {
   private readonly BLOG_ITEMS_PER_PAGE: number = 10;
-  private blogItems: IBlogItem[] = [];
-  private blogItemMap: Map<string, IBlogItem> = new Map();
-  private pagedBlogItemMap: Map<number, IBlogItem[]> = new Map();
-  private blogItemByUrlMap: Map<string, IBlogItem> = new Map();
+  private blogItems: BlogItem[] = [];
+  private blogItemMap: Map<string, BlogItem> = new Map();
+  private pagedBlogItemMap: Map<number, BlogItem[]> = new Map();
+  private blogItemByUrlMap: Map<string, BlogItem> = new Map();
 
   public initBlogItems(): void {
     try {
@@ -22,14 +22,14 @@ export class BlogItemDao {
     // map by id
     this.blogItemMap = new Map(
       this.blogItems.map((blogItem) => {
-        return [blogItem.id, blogItem] as [string, IBlogItem];
+        return [blogItem.id, blogItem] as [string, BlogItem];
       })
     );
 
     // map by friendly_url
-    this.blogItemByUrlMap = new Map<string, IBlogItem>(
+    this.blogItemByUrlMap = new Map<string, BlogItem>(
       this.blogItems.map((blogItem) => {
-        return [blogItem.urlFriendlyId, blogItem] as [string, IBlogItem];
+        return [blogItem.urlFriendlyId, blogItem] as [string, BlogItem];
       })
     );
 
@@ -38,14 +38,14 @@ export class BlogItemDao {
     logger.info("Blog pages created: " + this.pagedBlogItemMap.size);
   }
 
-  private loadBlogJson(): IBlogItem[] {
+  private loadBlogJson(): BlogItem[] {
     return jsonfile.readFileSync(dataFile);
   }
 
   // page 1 contains oldest blogItems, highest page contains latest items
   private buildPagedBlogItemMap(
-    blogItems: IBlogItem[]
-  ): Map<number, IBlogItem[]> {
+    blogItems: BlogItem[]
+  ): Map<number, BlogItem[]> {
     let startIdx: number = 0;
     let endIdx: number;
     let totalPagesCount: number;
@@ -66,7 +66,7 @@ export class BlogItemDao {
     const sortedBlogItems = [...blogItems].sort((left, right): number => {
       return right.createdOn.localeCompare(left.createdOn);
     });
-    const pagedBlogItemMap = new Map<number, IBlogItem[]>();
+    const pagedBlogItemMap = new Map<number, BlogItem[]>();
     let pageNumber: number;
     for (pageNumber = 1; pageNumber <= totalPagesCount; pageNumber++) {
       pagedBlogItemMap.set(pageNumber, sortedBlogItems.slice(startIdx, endIdx));
@@ -86,12 +86,12 @@ export class BlogItemDao {
     return new BlogMeta(this.pagedBlogItemMap.size, this.blogItems.length);
   }
 
-  public getAll(): IBlogItem[] {
+  public getAll(): BlogItem[] {
     return [...this.blogItems];
   }
 
-  public async getById(id: string): Promise<IBlogItem> {
-    return new Promise<IBlogItem>((resolve, reject) => {
+  public async getById(id: string): Promise<BlogItem> {
+    return new Promise<BlogItem>((resolve, reject) => {
       const blogItem = this.blogItemMap.get(id);
       if (blogItem) {
         return resolve(blogItem);
@@ -101,8 +101,8 @@ export class BlogItemDao {
     });
   }
 
-  public async getByPageId(pageId: number): Promise<IBlogItem[]> {
-    return new Promise<IBlogItem[]>((resolve, reject) => {
+  public async getByPageId(pageId: number): Promise<BlogItem[]> {
+    return new Promise<BlogItem[]>((resolve, reject) => {
       const blogItems = this.pagedBlogItemMap.get(pageId);
       if (blogItems) {
         return resolve(blogItems);
@@ -112,8 +112,8 @@ export class BlogItemDao {
     });
   }
 
-  public async getByUrlFriendlyId(urlFriendlyId: string): Promise<IBlogItem> {
-    return new Promise<IBlogItem>((resolve, reject) => {
+  public async getByUrlFriendlyId(urlFriendlyId: string): Promise<BlogItem> {
+    return new Promise<BlogItem>((resolve, reject) => {
       const blogItem = this.blogItemByUrlMap.get(urlFriendlyId);
       if (blogItem) {
         return resolve(blogItem);
