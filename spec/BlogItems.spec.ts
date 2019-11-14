@@ -3,7 +3,7 @@ import supertest from "supertest";
 
 import { BAD_REQUEST, CREATED, OK } from "http-status-codes";
 import { Response, SuperTest, Test } from "supertest";
-import { IBlogItem, BlogItem } from "@entities";
+import { BlogItem } from "@entities";
 import { pErr, paramMissingError, logger } from "@shared";
 
 describe("Blog Routes", () => {
@@ -26,7 +26,7 @@ describe("Blog Routes", () => {
         pErr(err);
         expect(res.status).toBe(OK);
         expect(res.body.error).toBeUndefined();
-        const blogItems: IBlogItem[] = res.body;
+        const blogItems: BlogItem[] = res.body;
         expect(blogItems.length).toBeGreaterThan(1);
         done();
       });
@@ -43,7 +43,7 @@ describe("Blog Routes", () => {
         pErr(err);
         expect(res.status).toBe(OK);
         expect(res.body.error).toBeUndefined();
-        const blogItems: IBlogItem[] = res.body;
+        const blogItems: BlogItem[] = res.body;
         expect(blogItems.length).toBeGreaterThan(1);
         done();
       });
@@ -69,7 +69,7 @@ describe("Blog Routes", () => {
         expect(res.status).toBe(OK);
         expect(res.body.error).toBeUndefined();
         logger.info("**** " + JSON.stringify(res.body));
-        const blogItems: IBlogItem = res.body;
+        const blogItems: BlogItem = res.body;
         expect(blogItems.id).toBe("1");
         logger.info("created on Day: " + blogItems.createdOn);
         done();

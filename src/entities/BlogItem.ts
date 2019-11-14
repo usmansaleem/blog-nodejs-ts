@@ -1,5 +1,4 @@
 import { Category, ICategory } from "./Category";
-import moment from "moment";
 
 export class BlogItem {
   public id?: string | undefined;
@@ -14,7 +13,7 @@ export class BlogItem {
   public categories: ICategory[];
 
   constructor(
-    id: string,
+    id: string | undefined,
     urlFriendlyId: string,
     title: string,
     description: string,
@@ -22,9 +21,6 @@ export class BlogItem {
     blogSection: string,
     createdOn: string,
     modifiedOn: string,
-    // createDay: string,
-    // createMonth: string,
-    // createYear: string,
     categories: ICategory[]
   ) {
     this.id = id;
@@ -37,20 +33,5 @@ export class BlogItem {
     this.modifiedOn = modifiedOn;
 
     this.categories = categories;
-  }
-}
-
-export class BlogItemDate {
-  public readonly weekday: string;
-  public readonly day: string;
-  public readonly month: string;
-  public readonly year: string;
-
-  constructor(createdDate: string) {
-   var parsedDate = moment(createdDate);
-   this.weekday = parsedDate.format("dddd");
-   this.day = parsedDate.format("D");
-   this.month = parsedDate.format("MMMM");
-   this.year = parsedDate.format("Y") ;  
   }
 }

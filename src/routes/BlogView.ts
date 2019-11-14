@@ -3,7 +3,7 @@ import { Request, Response, Router, Express } from "express";
 import { BAD_REQUEST, NOT_FOUND, OK } from "http-status-codes";
 import { ParamsDictionary } from "express-serve-static-core";
 import { blogItemDao } from "@daos";
-import { BlogItemDate } from '@entities';
+import { BlogItemDate } from "@entities";
 
 // Init shared
 const router = Router();
