@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="/css/calendar.css">
@@ -94,8 +94,10 @@
             </div>
         </div>
         <div class="footer-copyright blue-grey darken-2">
-            <div class="container blue-grey-text text-lighten-5">(c) Usman Saleem 2005-2019. v7.0</div>
-        </div>
+            <div class="container blue-grey-text text-lighten-5">© 2005-<noscript>2019</noscript><script type="text/javascript">document.write(new Date().getFullYear());</script> Usman Saleem, All rights reserved. v7.0
+                <a class="blue-grey-text text-lighten-5 right" href="https://github.com/usmansaleem/blog-static-v7/blob/master/LICENSE.txt">MIT License</a>  
+            </div> 
+        </div>   
     </footer>
 
     <!-- JS -->
@@ -107,12 +109,14 @@
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- Google Analytics -->
     <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-151510598-1', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-151510598-1', 'auto');
+        ga('send', 'pageview');
     </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
 </body>
 
 </html>
