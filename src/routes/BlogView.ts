@@ -9,22 +9,6 @@ import { BlogItemDate } from "@entities";
 const router = Router();
 
 /******************************************************************************
- *          List of all articles anchor links - "GET /view/list"
- ******************************************************************************/
-
-router.get("/list", async (req: Request, res: Response) => {
-    try {
-      const blogItems = blogItemDao.getAll();
-      res.status(OK);
-      res.render("list", { blogItems });
-    } catch (err) {
-      logger.error(err.message, err);
-      res.status(NOT_FOUND);
-      res.render("error", { message: err.message, error: {} });
-    }
-  });
-
-/******************************************************************************
  *          Get Blog Page rendered - "GET /view/blog/:urlFriendlyId"
  ******************************************************************************/
 
@@ -39,7 +23,7 @@ router.get("/blog/:urlFriendlyId", async (req: Request, res: Response) => {
   } catch (err) {
     logger.error(err.message, err);
     res.status(NOT_FOUND);
-    res.render("error", { message: err.message, error: {} });
+    res.render("error", { message: err.message, desc: "Sorry, the resource you are trying to view is not available." });
   }
 });
 
