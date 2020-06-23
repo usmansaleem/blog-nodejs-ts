@@ -22,7 +22,7 @@ jobs:
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-          ARGS: "-rltgoDzvO --delete --exclude 'logs' --exclude 'node_modules' --exclude 'dist' --exclude 'env/*.env'"
+          ARGS: "-rltgoDzvO --delete --exclude 'logs' --exclude 'node_modules' --exclude 'dist' --exclude 'env/*.env' --exclude '.git' --exclude '.github'"
           SOURCE: ""
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
@@ -33,4 +33,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        script: true
+        script_stop: true
+        script: |
+          cd $${{ secrets.REMOTE_TARGET }}
+          yarn install && yarn build
