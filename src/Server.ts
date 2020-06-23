@@ -1,9 +1,7 @@
 import cookieParser from "cookie-parser";
 import express from "express";
 import { Request, Response } from "express";
-import morgan from "morgan";
 import path from "path";
-import rfs from "rotating-file-stream";
 import BaseRouter from "./routes";
 import BlogViewRouter from "./routes/BlogView";
 
@@ -11,16 +9,6 @@ import BlogViewRouter from "./routes/BlogView";
 const app = express();
 
 // Add middleware/settings/routes to express.
-
-// set up morgan access logging
-app.use(
-  morgan("combined", {
-    stream: rfs("access.log", {
-      interval: "1d", // rotate daily
-      path: "./logs"
-    })
-  })
-);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
