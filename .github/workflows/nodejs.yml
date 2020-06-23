@@ -18,6 +18,14 @@ jobs:
         yarn build
       env:
         CI: true
+    - name: Stop Remote Service
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script_stop: true
+        script: sudo systemctl stop blog-node  
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
@@ -40,3 +48,4 @@ jobs:
         script: |
           cd $TARGET
           yarn install && yarn build
+          sudo systemctl start blog-node 
