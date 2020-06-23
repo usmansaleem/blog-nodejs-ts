@@ -29,10 +29,13 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}    
     - name: Relaunch Service
       uses: appleboy/ssh-action@master
+      env:
+        TARGET: ${{ secrets.REMOTE_TARGET }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         script_stop: true
         script: |
-          cd blog-nodejs && yarn install && yarn build
+          cd $TARGET
+          yarn install && yarn build
